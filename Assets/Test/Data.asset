@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950f217f48041de488eaab73f84aa1c3, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  QuestionTest:
+  - Question: "\u0422\u044B \u0433\u0435\u0439 ?"
+    TrueAnswer: 1
+    Answers:
+    - "\u0427\u0415\u0420\u0422"
+    - "\u0414\u0410"
+    - "\u041D\u0415\u0422"
+    - "\u0412\u041E\u0417\u041C\u041E\u0416\u041D\u041E"
+  - Question: "\u0422\u044B \u0447\u0435\u0440\u0442"
+    TrueAnswer: 2
+    Answers:
+    - "\u0427\u0415\u0420\u0422"
+    - "\u0414\u0410"
+    - "\u041D\u0415\u0422"
+    - "\u0412\u041E\u0417\u041C\u041E\u0416\u041D\u041E"
+  - Question: "\u0422\u044B \u043D\u0430\u0442\u0443\u0440\u0430\u043B"
+    TrueAnswer: 3
+    Answers:
+    - "\u0427\u0415\u0420\u0422"
+    - "\u0414\u0410"
+    - "\u041D\u0415\u0422"
+    - "\u0412\u041E\u0417\u041C\u041E\u0416\u041D\u041E"
