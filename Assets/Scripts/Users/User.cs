@@ -12,18 +12,34 @@ public class User
     [SerializeField]
     private string _name;
     [SerializeField]
-    private Texture2D _icon;
+    private string _pathToIcon;
 
-    public User(string login, string password, string name = "Нет имени", Texture2D icon = null)
+    public User(string login, string password, string name = "Некто", string pathToIcon = "Base.png")
     {
         _login = login;
         _password = password;
         _name = name;
-        _icon = icon;
+        _pathToIcon = pathToIcon;
     }
 
-    public string Login => _login;
-    public string Password => _password;
-    public string Name => _name;
-    public Texture2D Icon => _icon;
+    public string Login 
+    {
+        get { return _login; }  
+        set { _login = value; }
+    }
+    public string Password
+    {
+        get { return _password; }
+        set { _password = value; }
+    }
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+    public string PathToIcon
+    {
+        get { return _pathToIcon; }
+        set { _pathToIcon = value; }
+    }
 }

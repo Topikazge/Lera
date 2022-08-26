@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IWindowActive
 {
-    public void Open();
+    public void View();
+    public void Hide();
 }
