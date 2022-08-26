@@ -8,6 +8,7 @@ public class LoginWindow : MonoBehaviour, IWindowActive
     [SerializeField] private TextMeshProUGUI _enterPassword;
     [SerializeField] private GameObject _objectContainer;
     [SerializeField] private ControllerEnterWidow _controller;
+    [SerializeField] private Windowcontroler _windowcontroler;
     private User _user;
 
     public void View()
@@ -33,6 +34,7 @@ public class LoginWindow : MonoBehaviour, IWindowActive
         if (TryFindUser(users))
         {
             UserContainer.Instance = _user;
+            _windowcontroler.OpenMain(this);
         }
         else
         {

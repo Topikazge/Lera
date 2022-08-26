@@ -9,6 +9,8 @@ public class ControllerEnterWidow : MonoBehaviour
     [SerializeField] private LoginWindow _loginWindow;
     [SerializeField] private StartWindow _startWindow;
     [SerializeField] private ProfileCreator _profileCreator;
+    [SerializeField] private WindowActive _windowSetting;
+
 
     public void OpenLogin(IWindowActive whoCall)
     {
@@ -43,4 +45,10 @@ public class ControllerEnterWidow : MonoBehaviour
         _profileCreator.View();
     }
 
+
+    public void OpenMain(IWindowActive whoCall)
+    {
+        whoCall.Hide();
+        _profileCreator.View();
+    }
 }

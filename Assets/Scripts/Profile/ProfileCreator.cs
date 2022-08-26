@@ -9,7 +9,7 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
 {
     [SerializeField] private TextMeshProUGUI _nameField;
     [SerializeField] private Image _imageField;
-
+    [SerializeField] private Windowcontroler _controllerEnterWidow;
     public void Hide()
     {
         gameObject.SetActive(false);
@@ -37,6 +37,6 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
       //  File.WriteAllBytes(path, itemBGBytes);
         ChangeUserProfil changeUserProfil = new ChangeUserProfil();
         changeUserProfil.SetUser(UserContainer.Instance).ChangeName(nameUser).ChangeIcon("Assets/Resources/1.png").Save();
-
+        _controllerEnterWidow.OpenMain(this);
     }
 }
