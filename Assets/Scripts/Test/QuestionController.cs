@@ -4,13 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuestionController : MonoBehaviour
+public class QuestionController : WindowActive
 {
     [SerializeField] private  TestContainer _testContainer;
     [SerializeField] private TextMeshProUGUI _questionField;
     [SerializeField] private TextMeshProUGUI[] _answer;
+    [SerializeField] private TestViewer _testViewer;
     private int _trueAnswer;
-    private int _maxTrueAnswer;
+    private int _maxAnswer;
     private int _answerIndex;
 
     private QuestionTest[] _questionTest;
@@ -18,32 +19,43 @@ public class QuestionController : MonoBehaviour
     public void Start()
     {
         _questionTest = _testContainer.QuestionTest;
-        _answerIndex = 1;
+        _answerIndex = 0;
         _trueAnswer = 0;
-        _maxTrueAnswer = _questionTest.Length;
+        _maxAnswer = _questionTest.Length;
         NextQuestion();
     }
 
     public void OnClickedAnswer(int numberAnswer)
     {
-        if(numberAnswer == _questionTest[_answerIndex - 1].TrueAnswer)
+        int trueAnswer = _questionTest[_answerIndex].TrueAnswer;
+        Debug.Log("numberAnswer - "+ numberAnswer+ " trueAnswer - "+ trueAnswer);
+        if (numberAnswer == trueAnswer)
         {
             _trueAnswer++;
+            Debug.Log("Увеличилось на 1");
            
         }
 
-        if ((_answerIndex-1) != _maxTrueAnswer)
+        Debug.Log("(_answerIndex-1) - " + (_answerIndex) + " _maxAnswer - " + _maxAnswer);
+        if ((_answerIndex+1) != _maxAnswer)
         {
+            _answerIndex++;
             NextQuestion();
         }
+        else
+        {
+            _testViewer.ViewResult(this, _trueAnswer, _maxAnswer);
+        }
+      
     }
 
     private void NextQuestion()
     {
-        _questionField.text = _questionTest[_answerIndex - 1].Question;
+        Debug.Log("Переход");
+        _questionField.text = _questionTest[_answerIndex].Question;
         for (int i = 0; i < _answer.Length; i++)
         {
-            _answer[i].text = _questionTest[_answerIndex - 1].Answers[i];
+            _answer[i].text = _questionTest[_answerIndex].Answers[i];
         }
     }
 

@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class VideoWindow : WindowActive
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private VideoWindowController _videoWindowController;
 
-    // Update is called once per frame
-    void Update()
+    public void OpenVideoController()
     {
-        
+        _videoWindowController.OpenTestFirst(this);
     }
-}
+} 

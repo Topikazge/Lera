@@ -10,7 +10,7 @@ public class VideoController : MonoBehaviour
     [SerializeField] private Button _goTest;
     private bool _isPause;
 
-    private void Awake()
+    private void OnEnable()
     {
         _videoPlayer.Pause();
         _isPause = true;
@@ -20,6 +20,7 @@ public class VideoController : MonoBehaviour
     private void FinishedVideo(UnityEngine.Video.VideoPlayer vp)
     {
         _goTest.interactable = true;
+        _isPause = true;
         Debug.Log("Кнопка заработала");
     }
 

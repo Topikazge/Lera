@@ -10,4 +10,10 @@ public class CenterSwitcher : WindowActive
         _videoWindowController.OpenWindowVideo(WhoToCall);
     }
 
+    public void OpenVideoWindow(IWindowActive whoCalled)
+    {
+     //   whoCalled.Hide();
+        _videoWindowController.View();
+    }
+
 }
