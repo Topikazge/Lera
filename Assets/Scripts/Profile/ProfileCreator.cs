@@ -31,7 +31,7 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
     private void SaveChange()
     {
 		OpenFileBrowser();
-		string nameUser = _nameField.text;
+		/*string nameUser = _nameField.text;
         Sprite imageUser = _imageField.sprite;
        // Texture2D itemBGTex = imageUser.texture;
        // byte[] itemBGBytes = itemBGTex.EncodeToPNG();
@@ -39,7 +39,7 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
       //  File.WriteAllBytes(path, itemBGBytes);
         ChangeUserProfil changeUserProfil = new ChangeUserProfil();
         changeUserProfil.SetUser(UserContainer.Instance).ChangeName(nameUser).ChangeIcon("Assets/Resources/1.png").Save();
-        _controllerEnterWidow.OpenMain(this);
+        _controllerEnterWidow.OpenMain(this);*/
     }
 
 	void OpenFileBrowser()
