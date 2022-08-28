@@ -2,19 +2,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System.Linq;
-public class AvatarManager : MonoBehaviour
+public class AvatarManager : WindowActive
 {
+    [SerializeField] private ProfileCreator _creator;
     public GameObject fileListPan, fileContent, filePrefab;
     public RawImage avatarImg;
     private DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\Macroflai\Documents\GitHub\FirstSite\Image\Portfolio");
   // private DirectoryInfo dirInfo = new DirectoryInfo("/mnt/sdcard");
     private FileInfo[] files;
     private GameObject[] instanceObjs;
+
     public static AvatarManager instance;
     private void Awake()
     {
         instance = this;
     }
+
+    public override void View()
+    {
+        base.View();
+        LoadAvatarsList();
+    }
+
+
     public void LoadAvatarsList()
     {
         fileListPan.SetActive(true); avatarImg.gameObject.SetActive(false);
@@ -36,5 +46,6 @@ public class AvatarManager : MonoBehaviour
         fileListPan.SetActive(false); avatarImg.gameObject.SetActive(true);
         foreach (GameObject obj in instanceObjs)
             Destroy(obj);
+        _creator.CloseFile();
     }
 }
