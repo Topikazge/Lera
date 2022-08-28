@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 public class AvatarManager : WindowActive
 {
+    public static string PathToImage;
     [SerializeField] private ProfileCreator _creator;
     public GameObject fileListPan, fileContent, filePrefab;
     public RawImage avatarImg;
@@ -34,15 +35,15 @@ public class AvatarManager : WindowActive
         {
             FileScript file = Instantiate(filePrefab, fileContent.transform).GetComponent<FileScript>();
             file.fileNameText.text = files[i].Name;
-            file.index = 1;
+            file.index = i;
             instanceObjs[i] = file.gameObject;
         }
     }
     public void SelectAvatar(int index)
     {
-        Debug.Log("Âûגאûגאûגאûגאûגאûגאאגאף");
         WWW www = new WWW("file://" + files[index].FullName);
         avatarImg.texture = www.texture;
+        PathToImage = www.url;
         fileListPan.SetActive(false); avatarImg.gameObject.SetActive(true);
         foreach (GameObject obj in instanceObjs)
             Destroy(obj);
