@@ -6,7 +6,8 @@ public class AvatarManager : MonoBehaviour
 {
     public GameObject fileListPan, fileContent, filePrefab;
     public RawImage avatarImg;
-    private DirectoryInfo dirInfo = new DirectoryInfo("/mnt/sdcard");
+    private DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\Macroflai\Documents\GitHub\FirstSite\Image\Portfolio");
+  // private DirectoryInfo dirInfo = new DirectoryInfo("/mnt/sdcard");
     private FileInfo[] files;
     private GameObject[] instanceObjs;
     public static AvatarManager instance;
@@ -29,6 +30,7 @@ public class AvatarManager : MonoBehaviour
     }
     public void SelectAvatar(int index)
     {
+        Debug.Log("Âûגאûגאûגאûגאûגאûגאאגאף");
         WWW www = new WWW("file://" + files[index].FullName);
         avatarImg.texture = www.texture;
         fileListPan.SetActive(false); avatarImg.gameObject.SetActive(true);
