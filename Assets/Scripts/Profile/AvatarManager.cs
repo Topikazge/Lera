@@ -35,7 +35,7 @@ public class AvatarManager : MonoBehaviour
         {
             FileScript file = Instantiate(filePrefab, fileContent.transform).GetComponent<FileScript>();
             file.fileNameText.text = files[i].Name;
-            file.index = i;
+            file.index = 1;
             instanceObjs[i] = file.gameObject;
         }
 
@@ -43,11 +43,17 @@ public class AvatarManager : MonoBehaviour
     }
     public void SelectAvatar(int index)
     {
+<<<<<<< HEAD
         Debug.Log("files: " + files);
         WWW www = new WWW("file://" + files[index].FullName);
         avatarImg.texture = www.texture;
         PathToImage = www.url;
         Debug.Log("Ïóòü ê ôàéëó: " + PathToImage);
+=======
+        Debug.Log("Âûâàûâàûâàûâàûâàûâààâàó");
+        WWW www = new WWW("file://" + files[index].FullName);
+        avatarImg.texture = www.texture;
+>>>>>>> parent of 017fbff (Ð¾Ð»Ñ€Ð»Ñ€Ð»Ñ€)
         fileListPan.SetActive(false); avatarImg.gameObject.SetActive(true);
         foreach (GameObject obj in instanceObjs)
             Destroy(obj);

@@ -5,7 +5,7 @@ using TMPro;
 public class FileScript : MonoBehaviour
 {
     public TextMeshProUGUI fileNameText;
-
+    [HideInInspector]
     public int index;
     public void OnClick()
     {

@@ -30,16 +30,15 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
 
     private void SaveChange()
     {
-
-		string nameUser = _nameField.text;
-        Texture2D imageUser = (Texture2D)_imageField.texture;
-        Debug.Log(AvatarManager.PathToImage);
-        // byte[] itemBGBytes = imageUser.EncodeToPNG();
-        //string path = "\\Resources\\" + nameUser + ".png";
-        // File.WriteAllBytes(path, itemBGBytes);
+		/*string nameUser = _nameField.text;
+        Sprite imageUser = _imageField.sprite;
+       // Texture2D itemBGTex = imageUser.texture;
+       // byte[] itemBGBytes = itemBGTex.EncodeToPNG();
+      //  string path = "/Resources" + nameUser + ".png";
+      //  File.WriteAllBytes(path, itemBGBytes);
         ChangeUserProfil changeUserProfil = new ChangeUserProfil();
-        changeUserProfil.SetUser(UserContainer.Instance).ChangeName(nameUser).ChangeIcon(AvatarManager.PathToImage).Save();
-        _controllerEnterWidow.OpenMain(this);
+        changeUserProfil.SetUser(UserContainer.Instance).ChangeName(nameUser).ChangeIcon("Assets/Resources/1.png").Save();
+        _controllerEnterWidow.OpenMain(this);*/
     }
 
 	void OpenFileBrowser()
