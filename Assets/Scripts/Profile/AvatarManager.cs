@@ -2,9 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System.Linq;
-public class AvatarManager : WindowActive
+public class AvatarManager : MonoBehaviour
 {
-    public static string PathToImage;
     [SerializeField] private ProfileCreator _creator;
     public GameObject fileListPan, fileContent, filePrefab;
     public RawImage avatarImg;
@@ -13,19 +12,6 @@ public class AvatarManager : WindowActive
     private FileInfo[] files;
     private GameObject[] instanceObjs;
 
-    public FileInfo[] Files
-    {
-        get
-        {
-            Debug.Log("кто то вызвал");
-           return files;
-        }
-        set
-        {
-            Debug.Log("value");
-            files = value;
-        }
-    }
     public static AvatarManager instance;
     private void Awake()
     {
@@ -34,7 +20,6 @@ public class AvatarManager : WindowActive
 
     public override void View()
     {
-        Debug.Log("Запуск View");
         base.View();
         LoadAvatarsList();
     }
@@ -66,6 +51,5 @@ public class AvatarManager : WindowActive
         fileListPan.SetActive(false); avatarImg.gameObject.SetActive(true);
         foreach (GameObject obj in instanceObjs)
             Destroy(obj);
-        _creator.CloseFile();
     }
 }
