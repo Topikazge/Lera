@@ -13,6 +13,19 @@ public class AvatarManager : WindowActive
     private FileInfo[] files;
     private GameObject[] instanceObjs;
 
+    public FileInfo[] Files
+    {
+        get
+        {
+            Debug.Log("кто то вызвал");
+           return files;
+        }
+        set
+        {
+            Debug.Log("value");
+            files = value;
+        }
+    }
     public static AvatarManager instance;
     private void Awake()
     {
@@ -21,6 +34,7 @@ public class AvatarManager : WindowActive
 
     public override void View()
     {
+        Debug.Log("Запуск View");
         base.View();
         LoadAvatarsList();
     }
@@ -28,6 +42,7 @@ public class AvatarManager : WindowActive
 
     public void LoadAvatarsList()
     {
+        Debug.Log("LoadAvatarsList: ");
         fileListPan.SetActive(true); avatarImg.gameObject.SetActive(false);
         files = new string[] { "*.jpeg", "*.jpg", "*.png" }.SelectMany(ext => dirInfo.GetFiles(ext, SearchOption.AllDirectories)).ToArray();
         instanceObjs = new GameObject[files.Length];
@@ -38,12 +53,16 @@ public class AvatarManager : WindowActive
             file.index = i;
             instanceObjs[i] = file.gameObject;
         }
+
+
     }
     public void SelectAvatar(int index)
     {
+        Debug.Log("files: " + files);
         WWW www = new WWW("file://" + files[index].FullName);
         avatarImg.texture = www.texture;
         PathToImage = www.url;
+        Debug.Log("Путь к файлу: " + PathToImage);
         fileListPan.SetActive(false); avatarImg.gameObject.SetActive(true);
         foreach (GameObject obj in instanceObjs)
             Destroy(obj);
