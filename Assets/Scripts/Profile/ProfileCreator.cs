@@ -13,6 +13,8 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
     [SerializeField] private Windowcontroler _controllerEnterWidow;
     [SerializeField] private ProfileCreator _profileWindow;
     [SerializeField] private AvatarManager _FileWindow;
+    [SerializeField] private MainController _mainController;
+
     public void Hide()
     {
         gameObject.SetActive(false);
@@ -43,15 +45,15 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
 
     private void SaveChange()
     {
-
 		string nameUser = _nameField.text;
         Texture2D imageUser = (Texture2D)_imageField.texture;
         Debug.Log(AvatarManager.PathToImage);
+        string pathToImage = AvatarManager.PathToImage;
         // byte[] itemBGBytes = imageUser.EncodeToPNG();
         //string path = "\\Resources\\" + nameUser + ".png";
         // File.WriteAllBytes(path, itemBGBytes);
         ChangeUserProfil changeUserProfil = new ChangeUserProfil();
-        changeUserProfil.SetUser(UserContainer.Instance).ChangeName(nameUser).ChangeIcon(AvatarManager.PathToImage).Save();
+        changeUserProfil.SetUser(UserContainer.Instance).ChangeName(nameUser).ChangeIcon(pathToImage).Save();
         _controllerEnterWidow.OpenMain(this);
     }
 }

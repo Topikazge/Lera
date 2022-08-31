@@ -61,7 +61,8 @@ public class AvatarManager : WindowActive
         WWW www = new WWW("file://" + FileS[index].FullName);
         avatarImg.texture = www.texture;
         PathToImage = www.url;
-        fileListPan.SetActive(false); avatarImg.gameObject.SetActive(true);
+        fileListPan.SetActive(false); 
+        avatarImg.gameObject.SetActive(true);
         foreach (GameObject obj in instanceObjs)
             Destroy(obj);
         _creator.CloseFile();

@@ -14,7 +14,7 @@ public class User
     [SerializeField]
     private string _pathToIcon;
 
-    public User(string login, string password, string name = "Некто", string pathToIcon = "Base.png")
+    public User(string login, string password, string name = "Некто", string pathToIcon = "C:\\Users\\Macroflai\\Documents\\GitHub\\FirstSite\\Image\\Portfolio\\deadEveil.jpg")
     {
         _login = login;
         _password = password;

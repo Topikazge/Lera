@@ -3,6 +3,7 @@ using UnityEngine;
 public class CenterSwitcher : WindowActive
 {
     [SerializeField] private VideoWindowController _videoWindowController;
+    [SerializeField] private ProfileUser _profileUser;
 
     public void OpenVideoWindow(IWindowActive whoCalled, IWindowActive WhoToCall)
     {
@@ -14,6 +15,12 @@ public class CenterSwitcher : WindowActive
     {
      //   whoCalled.Hide();
         _videoWindowController.View();
+    }
+
+    public void OpenProfileWindwo(IWindowActive whoCalled)
+    {
+          whoCalled.Hide();
+        _profileUser.View();
     }
 
 }
