@@ -19,6 +19,7 @@ public class MainController : WindowActive
 
     public void OpenChangeProfile(IWindowActive whoCall)
     {
+        Debug.Log("залупа");
         whoCall.Hide();
         _profileCreator.View();
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using SimpleFileBrowser;
 using System.IO;
 
-public class ProfileCreator : MonoBehaviour, IWindowActive
+public class ProfileCreator : WindowActive
 {
     [SerializeField] private TextMeshProUGUI _nameField;
     [SerializeField] private RawImage _imageField;
@@ -15,13 +15,11 @@ public class ProfileCreator : MonoBehaviour, IWindowActive
     [SerializeField] private AvatarManager _FileWindow;
     [SerializeField] private MainController _mainController;
 
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
 
-    public void View()
+
+    public override void View()
     {
+        Debug.Log("¿€¬¿€¬¿");
         gameObject.SetActive(true);
     }
 

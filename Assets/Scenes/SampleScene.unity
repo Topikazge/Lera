@@ -2829,6 +2829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f59fd3572ba7314e9b0aab374ed8a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _window: {fileID: 0}
   _nameField: {fileID: 1827275257}
   _imageField: {fileID: 1009046410}
   _controllerEnterWidow: {fileID: 1125482312}
@@ -3595,7 +3596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &295223443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3709,7 +3710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &300857155
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16476,12 +16477,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f59fd3572ba7314e9b0aab374ed8a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _window: {fileID: 300857154}
   _nameField: {fileID: 1301893181}
   _imageField: {fileID: 621604415}
   _controllerEnterWidow: {fileID: 1125482312}
   _profileWindow: {fileID: 1465554386}
   _FileWindow: {fileID: 67194236}
-  _mainController: {fileID: 0}
+  _mainController: {fileID: 1538506251}
 --- !u!224 &1465554387
 RectTransform:
   m_ObjectHideFlags: 0
