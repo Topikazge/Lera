@@ -7,6 +7,7 @@ public class VideoWindowController : WindowActive
     [SerializeField] private VideoWindow _videoWindow;
     [SerializeField] private TestViewer _testViewer;
     [SerializeField] private VideoWindow VideoWindow;
+    [SerializeField] private CenterSwitcher _ñenterSwitcher;
 
     public void OpenWindowVideo(IWindowActive WhoToCall)
     {
@@ -24,4 +25,9 @@ public class VideoWindowController : WindowActive
         _testViewer.View();
     }
 
+    public void OpenMain(IWindowActive WhoCall)
+    {
+        WhoCall.Hide();
+        _ñenterSwitcher.OpenMain(this);
+    }
 }

@@ -23,7 +23,7 @@ public class AvatarManager : WindowActive
     [SerializeField] private ProfileCreator _creator;
     public GameObject fileListPan, fileContent, filePrefab;
     public RawImage avatarImg;
-    private DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\Macroflai\Documents\GitHub\FirstSite\Image\Portfolio");
+    private DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\LordJ\OneDrive\Desktop\Картинки");
     // private DirectoryInfo dirInfo = new DirectoryInfo("/mnt/sdcard");
     private FileInfo[] files;
     private GameObject[] instanceObjs;

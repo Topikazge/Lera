@@ -9,7 +9,7 @@ public class StartWindow : MonoBehaviour, IWindowActive
     [SerializeField] private ControllerEnterWidow _controller;
     public void Hide()
     {
-        _objectContainer.SetActive(true);
+        _objectContainer.SetActive(false);
     }
 
     public void View()

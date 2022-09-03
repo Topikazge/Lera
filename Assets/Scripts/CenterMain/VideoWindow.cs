@@ -10,4 +10,9 @@ public class VideoWindow : WindowActive
     {
         _videoWindowController.OpenTestFirst(this);
     }
+
+    public void OpenMain()
+    {
+        _videoWindowController.OpenMain(this);
+    }
 } 

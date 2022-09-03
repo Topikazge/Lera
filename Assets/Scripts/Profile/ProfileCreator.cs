@@ -8,18 +8,19 @@ using System.IO;
 
 public class ProfileCreator : WindowActive
 {
-    [SerializeField] private TextMeshProUGUI _nameField;
-    [SerializeField] private RawImage _imageField;
+    [SerializeField] protected TextMeshProUGUI _nameField;
+    [SerializeField] protected RawImage _imageField;
     [SerializeField] private Windowcontroler _controllerEnterWidow;
-    [SerializeField] private ProfileCreator _profileWindow;
-    [SerializeField] private AvatarManager _FileWindow;
-    [SerializeField] private MainController _mainController;
+    [SerializeField] protected ProfileCreator _profileWindow;
+    [SerializeField] protected AvatarManager _FileWindow;
+    [SerializeField] protected MainController _mainController;
 
 
 
     public override void View()
     {
         Debug.Log("¿€¬¿€¬¿");
+        _window.SetActive(true);
         gameObject.SetActive(true);
     }
 
@@ -41,7 +42,7 @@ public class ProfileCreator : WindowActive
         _FileWindow.View();
     }
 
-    private void SaveChange()
+    protected virtual void SaveChange()
     {
 		string nameUser = _nameField.text;
         Texture2D imageUser = (Texture2D)_imageField.texture;
