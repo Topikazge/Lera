@@ -10,17 +10,17 @@ public static class WorkJson
         get
         {
 #if UNITY_ANDROID && !UNITY_EDITOR
-  Debug.Log("Путь - "+ Path.Combine(Application.persistentDataPath, "/Assets/Users.json"));
-            return Path.Combine(Application.persistentDataPath, "/Assets/Users.json");
+  Debug.Log("Путь - "+ Path.Combine(Application.persistentDataPath, "Users.json"));
+            return Path.Combine(Application.persistentDataPath, "Users.json");
 
 #else
-            // Debug.Log("Путь - " + Path.Combine(Application.dataPath, "Users.json")); C:\Users\LordJ\OneDrive\Desktop\Lera\Lera\Assets
-            //return Path.Combine(Application.dataPath, "Users.json");
-            string path = Directory.GetCurrentDirectory();
+            Debug.Log("Путь - " + Path.Combine(Application.dataPath, "Users.json"));
+            return Path.Combine(Application.dataPath, "Users.json");
+           /* string path = Directory.GetCurrentDirectory();
             string fullPath = path + "/Assets/Users.json";
             Debug.Log("path - " + path);
-            Debug.Log("Путь - " + fullPath);
-            return fullPath;//Path.Combine(path, "/Assets/Users.json");
+            Debug.Log("Путь - " + fullPath);*/
+           // return Path.Combine(path, "Users.json");
 #endif
         }
     }
@@ -38,6 +38,7 @@ public static class WorkJson
 
     public static Users Load()
     {
+        Check();
         string json = File.ReadAllText(PathToFile);
         Users users = JsonUtility.FromJson<Users>(File.ReadAllText(PathToFile));
         Debug.Log("===============");
@@ -52,8 +53,19 @@ public static class WorkJson
 
     public static void Save(Users users)
     {
+        Check();
         File.WriteAllText(PathToFile, JsonUtility.ToJson(users));
         Debug.Log("Данные в json загруженны");
+    }
+
+    private static void Check()
+    {
+
+            List<User> usersList = new List<User>();
+            usersList.Add(new User("123", "123"));
+            Users users = new Users(usersList);
+            File.WriteAllText(PathToFile, JsonUtility.ToJson(users));
+        
     }
 
     public static void SaveUser(User usern)
