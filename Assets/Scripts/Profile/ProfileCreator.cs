@@ -19,7 +19,6 @@ public class ProfileCreator : WindowActive
 
     public override void View()
     {
-        Debug.Log("¿€¬¿€¬¿");
         _window.SetActive(true);
         gameObject.SetActive(true);
     }
@@ -46,8 +45,8 @@ public class ProfileCreator : WindowActive
     {
 		string nameUser = _nameField.text;
         Texture2D imageUser = (Texture2D)_imageField.texture;
-        Debug.Log(AvatarManager.PathToImage);
-        string pathToImage = AvatarManager.PathToImage;
+       
+        string pathToImage = AvatarManager.IdIcon.ToString();
         // byte[] itemBGBytes = imageUser.EncodeToPNG();
         //string path = "\\Resources\\" + nameUser + ".png";
         // File.WriteAllBytes(path, itemBGBytes);

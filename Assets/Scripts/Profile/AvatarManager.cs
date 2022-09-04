@@ -19,7 +19,7 @@ public class AvatarManager : WindowActive
             files = value;
         }
     }
-    public static string PathToImage;
+    public static int IdIcon = 1;
     [SerializeField] private ProfileCreator _creator;
     public GameObject fileListPan, fileContent, filePrefab;
     public RawImage avatarImg;
@@ -28,6 +28,8 @@ public class AvatarManager : WindowActive
     private FileInfo[] files;
     private GameObject[] instanceObjs;
     [SerializeField] private IconsContainer _iconsContainer;
+
+    public  IconsContainer IconsContainer => _iconsContainer;
 
     public static AvatarManager instance;
     private void Awake()
@@ -44,10 +46,9 @@ public class AvatarManager : WindowActive
 
     public void LoadAvatarsList()
     {
-
-
-       /* fileListPan.SetActive(true); avatarImg.gameObject.SetActive(false);
-        FileS = new string[] { "*.jpeg", "*.jpg", "*.png" }.SelectMany(ext => dirInfo.GetFiles(ext, SearchOption.AllDirectories)).ToArray();
+       fileListPan.SetActive(true); 
+        avatarImg.gameObject.SetActive(false);
+       /*  FileS = new string[] { "*.jpeg", "*.jpg", "*.png" }.SelectMany(ext => dirInfo.GetFiles(ext, SearchOption.AllDirectories)).ToArray();
         instanceObjs = new GameObject[FileS.Length];
         for (int i = 0; i < FileS.Length; i++)
         {
@@ -60,14 +61,15 @@ public class AvatarManager : WindowActive
     }
     public void SelectAvatar(int index)
     {
-       /* Debug.Log("file in Load: " + FileS.Length);
-        WWW www = new WWW("file://" + FileS[index].FullName);*/
+        /* Debug.Log("file in Load: " + FileS.Length);
+         WWW www = new WWW("file://" + FileS[index].FullName);*/
+        IdIcon = index;
         avatarImg.texture = _iconsContainer.GetSprite(index);
        // PathToImage = www.url;
         fileListPan.SetActive(false); 
         avatarImg.gameObject.SetActive(true);
         /*foreach (GameObject obj in instanceObjs)
-            Destroy(obj);
-        _creator.CloseFile();*/
+            Destroy(obj);*/
+        _creator.CloseFile();
     }
 }

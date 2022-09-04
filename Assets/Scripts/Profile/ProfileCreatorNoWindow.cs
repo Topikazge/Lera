@@ -8,9 +8,8 @@ public class ProfileCreatorNoWindow : ProfileCreator
     protected override void SaveChange()
     {
         string nameUser = _nameField.text;
-        Texture2D imageUser = (Texture2D)_imageField.texture;
-        Debug.Log(AvatarManager.PathToImage);
-        string pathToImage = AvatarManager.PathToImage;
+        Texture2D imageUser = (Texture2D)_imageField.texture;       
+        string pathToImage = AvatarManager.IdIcon.ToString();
         // byte[] itemBGBytes = imageUser.EncodeToPNG();
         //string path = "\\Resources\\" + nameUser + ".png";
         // File.WriteAllBytes(path, itemBGBytes);
