@@ -6,6 +6,7 @@ public class TestViewer : WindowActive
 {
     [SerializeField] private ResultTest _resultTest;
     [SerializeField] private CenterSwitcher _centerSwitcher;
+    [SerializeField] private QuestionController _questionController;
 
     public void ViewResult(IWindowActive whoCall, int result, int max)
     {
@@ -17,5 +18,11 @@ public class TestViewer : WindowActive
     {
         whoCall.Hide();
         _centerSwitcher.OpenVideoWindow(this, whoToCall);
+    }
+
+    public override void View()
+    {
+        base.View();
+        _questionController.View();
     }
 }

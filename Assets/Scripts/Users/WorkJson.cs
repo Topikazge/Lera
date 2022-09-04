@@ -10,12 +10,17 @@ public static class WorkJson
         get
         {
 #if UNITY_ANDROID && !UNITY_EDITOR
-  Debug.Log("象螯 - "+ Path.Combine(Application.persistentDataPath, "Users.json"));
-            return Path.Combine(Application.persistentDataPath, "Users.json");
+  Debug.Log("象螯 - "+ Path.Combine(Application.persistentDataPath, "/Assets/Users.json"));
+            return Path.Combine(Application.persistentDataPath, "/Assets/Users.json");
 
 #else
-            // Debug.Log("象螯 - " + Path.Combine(Application.dataPath, "Users.json"));
-            return Path.Combine(Application.dataPath, "Users.json");
+            // Debug.Log("象螯 - " + Path.Combine(Application.dataPath, "Users.json")); C:\Users\LordJ\OneDrive\Desktop\Lera\Lera\Assets
+            //return Path.Combine(Application.dataPath, "Users.json");
+            string path = Directory.GetCurrentDirectory();
+            string fullPath = path + "/Assets/Users.json";
+            Debug.Log("path - " + path);
+            Debug.Log("象螯 - " + fullPath);
+            return fullPath;//Path.Combine(path, "/Assets/Users.json");
 #endif
         }
     }

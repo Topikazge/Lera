@@ -25,6 +25,12 @@ public class QuestionController : WindowActive
         NextQuestion();
     }
 
+    public override void View()
+    {
+        base.View();
+        Start();
+    }
+
     public void OnClickedAnswer(int numberAnswer)
     {
         int trueAnswer = _questionTest[_answerIndex].TrueAnswer;
