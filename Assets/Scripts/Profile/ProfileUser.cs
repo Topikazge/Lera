@@ -17,8 +17,12 @@ public class ProfileUser : WindowActive
     {
         _name.text = UserContainer.Instance.Name;
         _email.text = UserContainer.Instance.Login;
-        WWW www = new WWW("file://" + UserContainer.Instance.PathToIcon);
-        _icon.texture = www.texture;
+        AvatarManager sdfsdf = FindObjectOfType<AvatarManager>();
+        Debug.Log(sdfsdf);
+        
+        _icon.texture = AvatarManager.instance.IconsContainer.GetSprite(int.Parse(UserContainer.Instance.PathToIcon));
+       // WWW www = new WWW("file://" + UserContainer.Instance.PathToIcon);
+        //_icon.texture = www.texture;
     }
     public override void View()
     {

@@ -32,7 +32,7 @@ public class AvatarManager : WindowActive
     public  IconsContainer IconsContainer => _iconsContainer;
 
     public static AvatarManager instance;
-    private void Awake()
+    public void Awake()
     {
         instance = this;
     }

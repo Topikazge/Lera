@@ -64,10 +64,10 @@ public static class WorkJson
     private static void Check()
     {
 
-            List<User> usersList = new List<User>();
+         /*   List<User> usersList = new List<User>();
             usersList.Add(new User("123", "123"));
             Users users = new Users(usersList);
-            File.WriteAllText(PathToFile, JsonUtility.ToJson(users));
+            File.WriteAllText(PathToFile, JsonUtility.ToJson(users));*/
         
     }
 
