@@ -14,13 +14,16 @@ public static class WorkJson
             return Path.Combine(Application.persistentDataPath, "Users.json");
 
 #else
-            Debug.Log("象螯 - " + Path.Combine(Application.dataPath, "Users.json"));
-            return Path.Combine(Application.dataPath, "Users.json");
-           /* string path = Directory.GetCurrentDirectory();
+            /* Debug.Log("象螯 - " + Path.Combine(Application.dataPath, "Users.json"));
+             return Path.Combine(Application.dataPath, "Users.json");*/
+            /*string path = Directory.GetCurrentDirectory();
             string fullPath = path + "/Assets/Users.json";
             Debug.Log("path - " + path);
-            Debug.Log("象螯 - " + fullPath);*/
-           // return Path.Combine(path, "Users.json");
+            Debug.Log("象螯 - " + fullPath);
+            return fullPath;*/
+            //return Path.Combine(path, "Users.json");
+            // Debug.Log("???? - " + Path.Combine(Application.dataPath, "Users.json"));
+            return Path.Combine(Application.dataPath, "Users.json");
 #endif
         }
     }

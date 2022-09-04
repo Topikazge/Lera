@@ -14,6 +14,7 @@ public class ProfileCreator : WindowActive
     [SerializeField] protected ProfileCreator _profileWindow;
     [SerializeField] protected AvatarManager _FileWindow;
     [SerializeField] protected MainController _mainController;
+    [SerializeField] protected GameObject _selfSetting;
 
 
 
@@ -32,12 +33,12 @@ public class ProfileCreator : WindowActive
     public void CloseFile()
     {
         _FileWindow.Hide();
-        _profileWindow.View();
+        _selfSetting.SetActive(true);
     }
 
     public void OpenFiles()
     {
-        _profileWindow.Hide();
+        _selfSetting.SetActive(false);
         _FileWindow.View();
     }
 

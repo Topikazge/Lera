@@ -3071,13 +3071,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f59fd3572ba7314e9b0aab374ed8a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _window: {fileID: 252611998}
+  _window: {fileID: 1000382517}
   _nameField: {fileID: 1827275257}
   _imageField: {fileID: 1009046410}
   _controllerEnterWidow: {fileID: 1125482312}
   _profileWindow: {fileID: 252611999}
   _FileWindow: {fileID: 1760366383}
   _mainController: {fileID: 0}
+  _selfSetting: {fileID: 252611998}
 --- !u!224 &252612000
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7769,7 +7770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &668565794
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11586,7 +11587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1000382518
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17370,6 +17371,7 @@ MonoBehaviour:
   _profileWindow: {fileID: 1465554388}
   _FileWindow: {fileID: 67194236}
   _mainController: {fileID: 1538506251}
+  _selfSetting: {fileID: 0}
 --- !u!1 &1488492122
 GameObject:
   m_ObjectHideFlags: 0
