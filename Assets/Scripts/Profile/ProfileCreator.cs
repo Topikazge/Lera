@@ -10,7 +10,7 @@ public class ProfileCreator : WindowActive
 {
     [SerializeField] protected TextMeshProUGUI _nameField;
     [SerializeField] protected RawImage _imageField;
-    [SerializeField] private Windowcontroler _controllerEnterWidow;
+    [SerializeField] protected Windowcontroler _controllerEnterWidow;
     [SerializeField] protected ProfileCreator _profileWindow;
     [SerializeField] protected AvatarManager _FileWindow;
     [SerializeField] protected MainController _mainController;
