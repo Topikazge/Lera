@@ -63,26 +63,32 @@ public static class WorkJson
 
     private static void Check()
     {
-
-         /*   List<User> usersList = new List<User>();
+        try
+        {
+            
+            JsonUtility.FromJson<Users>(File.ReadAllText(PathToFile));
+        }
+        catch
+        {
+            List<User> usersList = new List<User>();
             usersList.Add(new User("123", "123"));
             Users users = new Users(usersList);
-            File.WriteAllText(PathToFile, JsonUtility.ToJson(users));*/
-        
+            File.WriteAllText(PathToFile, JsonUtility.ToJson(users));
+        }
     }
 
     public static void SaveUser(User usern)
     {
         Users users = Load();
-       /* foreach (var item in users.User)
-        {
-            Debug.Log("item - " + item.Password);
-            char[] charItem = item.Password.ToCharArray();
-            for (int i = 0; i < charItem.Length; i++)
-            {
-                Debug.Log(charItem[i]);
-            }
-        }*/
+        /* foreach (var item in users.User)
+         {
+             Debug.Log("item - " + item.Password);
+             char[] charItem = item.Password.ToCharArray();
+             for (int i = 0; i < charItem.Length; i++)
+             {
+                 Debug.Log(charItem[i]);
+             }
+         }*/
 
 
 
@@ -95,10 +101,10 @@ public static class WorkJson
         {
             char[] charItem = item.Password.ToCharArray();
             Debug.Log($"charItem.Length: {charItem.Length},а число{item.Password}/ chars.Length: {chars.Length} ");
-            if ((charItem.Length-1 == chars.Length))
+            if ((charItem.Length - 1 == chars.Length))
             {
                 bool isTrue = true;
-                for (int i = 0; i < charItem.Length-1; i++)
+                for (int i = 0; i < charItem.Length - 1; i++)
                 {
                     Debug.Log($"charItem[i]: {charItem[i]} / chars[i]: {chars[i]} ");
                     if (charItem[i] != chars[i])
