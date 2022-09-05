@@ -10,6 +10,11 @@ public class FileScript : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("Вызывю картинку");
+        CallManager();
+    }
+
+    protected virtual void CallManager()
+    {
         AvatarManager.instance.SelectAvatar(index);
     }
 }

@@ -12,6 +12,7 @@ public class ProfileUser : WindowActive
     [SerializeField] private TextMeshProUGUI _email;
     [SerializeField] private RawImage _icon;
     [SerializeField] private MainController _mainController;
+    [SerializeField] private AvatarManagerTWO _avatarManagerTWO;
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class ProfileUser : WindowActive
         AvatarManager sdfsdf = FindObjectOfType<AvatarManager>();
         Debug.Log(sdfsdf);
         
-        _icon.texture = AvatarManager.instance.IconsContainer.GetSprite(int.Parse(UserContainer.Instance.PathToIcon));
+        _icon.texture = _avatarManagerTWO.IconsContainer.GetSprite(int.Parse(UserContainer.Instance.PathToIcon));
        // WWW www = new WWW("file://" + UserContainer.Instance.PathToIcon);
         //_icon.texture = www.texture;
     }

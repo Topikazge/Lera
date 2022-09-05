@@ -24,15 +24,20 @@ public class AvatarManager : WindowActive
     public GameObject fileListPan, fileContent, filePrefab;
     public RawImage avatarImg;
    // private DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\LordJ\OneDrive\Desktop\Картинки");
-    private DirectoryInfo dirInfo = new DirectoryInfo("/storage");
-    private FileInfo[] files;
-    private GameObject[] instanceObjs;
-    [SerializeField] private IconsContainer _iconsContainer;
+    protected DirectoryInfo dirInfo = new DirectoryInfo("/storage");
+    protected FileInfo[] files;
+    protected GameObject[] instanceObjs;
+    [SerializeField] protected IconsContainer _iconsContainer;
 
     public  IconsContainer IconsContainer => _iconsContainer;
 
     public static AvatarManager instance;
     public void Awake()
+    {
+        InstanceSeter();
+    }
+
+    public virtual void InstanceSeter()
     {
         instance = this;
     }
