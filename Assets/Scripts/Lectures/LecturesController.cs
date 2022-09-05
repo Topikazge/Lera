@@ -23,7 +23,8 @@ public class LecturesController : WindowActive
     public override void View()
     {
         base.View();
-        _listLectures.Hide();
-        _lecturesWindow.View();
+        OpenListLectures();
+
+
     }
 }
