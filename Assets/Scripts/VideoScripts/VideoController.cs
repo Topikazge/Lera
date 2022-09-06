@@ -8,6 +8,8 @@ public class VideoController : MonoBehaviour
 {
     [SerializeField] private VideoPlayer _videoPlayer;
     [SerializeField] private Button _goTest;
+    [SerializeField] private GameObject _videoObject;
+    private long _frame;
     private bool _isPause;
 
     private void OnEnable()
@@ -22,6 +24,23 @@ public class VideoController : MonoBehaviour
         _goTest.interactable = true;
         _isPause = true;
         Debug.Log("Кнопка заработала");
+        CloseVideoObject();
+    }
+
+    public void OpenVideoObject()
+    {
+        _videoObject.SetActive(true);
+        _isPause = false;
+        _videoPlayer.frame = _frame;
+        _videoPlayer.Play();
+    }
+
+    public void CloseVideoObject()
+    {
+        _isPause = true;
+        _videoPlayer.Pause();
+        _frame = _videoPlayer.frame;
+        _videoObject.SetActive(false);
     }
 
     public void OnClickPauseButton()
@@ -29,10 +48,12 @@ public class VideoController : MonoBehaviour
         _isPause = !_isPause;
         if (_isPause)
         {
+            _frame = _videoPlayer.frame;
             _videoPlayer.Pause();
         }
         else
         {
+             _videoPlayer.frame = _frame;
             _videoPlayer.Play();
         }
     }

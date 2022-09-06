@@ -5,6 +5,7 @@ public class CenterSwitcher : WindowActive
     [SerializeField] private VideoWindowController _videoWindowController;
     [SerializeField] private ProfileUser _profileUser;
     [SerializeField] private TopicsList _topicsList;
+    [SerializeField] private VideoController _videoController;
 
     public void OpenVideoWindow(IWindowActive whoCalled, IWindowActive WhoToCall)
     {
@@ -28,6 +29,18 @@ public class CenterSwitcher : WindowActive
     {
         whoCalled.Hide();
         _topicsList.View();
+    }
+
+    public override void Hide()
+    {
+    //    _videoController.CloseVideoObject();
+        base.Hide();
+    }
+
+    public override void View()
+    { 
+        base.View();
+     //   _videoController.OpenVideoObject();
     }
 
 }
