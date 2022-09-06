@@ -30,6 +30,16 @@ public class ProfileUser : WindowActive
         base.View();
     }
 
+    private void OnEnable()
+    {
+        _name.text = UserContainer.Instance.Name;
+        _email.text = UserContainer.Instance.Login;
+        AvatarManager sdfsdf = FindObjectOfType<AvatarManager>();
+        Debug.Log(sdfsdf);
+
+        _icon.texture = _avatarManagerTWO.IconsContainer.GetSprite(int.Parse(UserContainer.Instance.PathToIcon));
+    }
+
     public void ChangeProfile()
     {
         _mainController.OpenChangeProfile(this);

@@ -17,7 +17,6 @@ public class ProfileCreator : WindowActive
     [SerializeField] protected GameObject _selfSetting;
 
 
-
     public override void View()
     {
         _window.SetActive(true);
@@ -38,6 +37,7 @@ public class ProfileCreator : WindowActive
 
     public void OpenFiles()
     {
+     
         _selfSetting.SetActive(false);
         _FileWindow.View();
     }

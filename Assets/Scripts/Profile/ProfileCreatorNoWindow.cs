@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ProfileCreatorNoWindow : ProfileCreator
 {
+    [SerializeField] protected IconsContainer _iconsContainer;
+
+
+    private void Awake()
+    {
+        _imageField.texture = _FileWindow.IconsContainer.GetSprite(int.Parse(UserContainer.Instance.PathToIcon));
+    }
 
     protected override void SaveChange()
     {
@@ -15,6 +22,8 @@ public class ProfileCreatorNoWindow : ProfileCreator
         // File.WriteAllBytes(path, itemBGBytes);
         ChangeUserProfil changeUserProfil = new ChangeUserProfil();
         changeUserProfil.SetUser(UserContainer.Instance).ChangeName(nameUser).ChangeIcon(pathToImage).Save();
+        _imageField.texture = _FileWindow.IconsContainer.GetSprite(int.Parse(UserContainer.Instance.PathToIcon));
+
         _mainController.OpenProfileWindow();
     }
 }
